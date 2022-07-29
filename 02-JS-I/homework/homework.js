@@ -74,9 +74,9 @@ function tienenMismaLongitud(str1, str2) {
   // Devuelve "true" si las dos strings tienen la misma longitud
   // De lo contrario, devuelve "false"
   // Tu código:
-  if(str1.length()==str2.length()){
+  if(str1.length==str2.length){
     return true;
-  }else fasle;
+  }else return false;
   
 }
 
@@ -86,7 +86,7 @@ function menosQueNoventa(num) {
   // Tu código:
   if(num < 90){
     return true;
-  }else false;
+  }else return false;
 }
 
 function mayorQueCincuenta(num) {
@@ -95,7 +95,7 @@ function mayorQueCincuenta(num) {
   // Tu código:
   if(num > 50){
     return true;
-  }else false;
+  }else return false;
 }
 
 function obtenerResto(x, y) {
@@ -111,7 +111,7 @@ function esPar(num) {
   // Tu código:
   if(num%2 == 0){
     return true;
-  }else false;
+  }else return false;
   
 }
 
@@ -121,7 +121,7 @@ function esImpar(num) {
   // Tu código:
   if(num%2 != 0){
     return true;
-  }else false;
+  }else return false;
   
 }
 
@@ -153,7 +153,7 @@ function redondearNumero(num) {
   // Tu código:
   var resto = num%1;
   if(resto >= 0,5){
-    return num+1
+    return (num - resto)+1
   }else return num - resto
   
 }
@@ -163,8 +163,8 @@ function redondearHaciaArriba(num) {
   // Tu código:
   var resto = num%1;
   if(resto > 0){
-    return num+1
-  }else return num
+    return num-resto+1;
+  }else return num-resto;
   
 }
 
@@ -174,7 +174,10 @@ function numeroRandom() {
   function getRandomInt(max) {
     return Math.floor(Math.random() * max);
   }
-  return getRandomInt(2);
+  if (getRandomInt(2)>1){
+    return 1;
+  }else return 0;
+ // return getRandomInt(2);
   
 }
 
@@ -202,7 +205,7 @@ function combinarNombres(nombre, apellido) {
   // Devuelve "nombre" y "apellido" combinados en una string y separados por un espacio.
   // Ejemplo: "Soy", "Henry" -> "Soy Henry"
   // Tu código:
-  return numbre +' '+ apellido
+  return nombre +' '+ apellido
   
 }
 
@@ -240,7 +243,7 @@ function deEuroAdolar(euro){
   //Supongamos que 1 euro equivale a 1.20 dólares. Escribe un programa que reciba
   //como parámetro un número de euros y calcule el cambio en dólares.
   //Escribe tu código aquí
-  return euro*1,20;
+  return euro/1,20;
   
 }
 
@@ -252,9 +255,11 @@ function esVocal(letra){
   // Si no es vocal, tambien debe devolver "Dato incorrecto".
   //Escribe tu código aquí
   letra = letra.toUpperCase();
-  if(letra.length() > 1 || (letra != 'A' && letra != 'E' && letra != 'I' && letra != 'O' && letra != 'U')) {
+  if(letra.length > 1) {
     return 'Dato incorrecto';
-  } return 'Es vocal';
+  }else if(letra != 'A' && letra != 'E' && letra != 'I' && letra != 'O' && letra != 'U'){
+    return 'Dato incorrecto';
+  } else return 'Es vocal';
 
 }
 
