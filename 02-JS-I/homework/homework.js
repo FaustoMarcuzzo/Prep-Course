@@ -151,10 +151,10 @@ function elevar(num, exponent) {
 function redondearNumero(num) {
   // Redondea "num" al entero más próximo y devuélvelo
   // Tu código:
-  var resto = num%1;
-  if(resto >= 0,5){
-    return (num - resto)+1
-  }else return num - resto
+  var resto = (num%1);
+  if(resto < 0.5){
+    return  num - resto;
+  }else return num+1 - resto;
   
 }
 
@@ -163,7 +163,7 @@ function redondearHaciaArriba(num) {
   // Tu código:
   var resto = num%1;
   if(resto > 0){
-    return num-resto+1;
+    return num+1 - resto;
   }else return num-resto;
   
 }
@@ -243,7 +243,7 @@ function deEuroAdolar(euro){
   //Supongamos que 1 euro equivale a 1.20 dólares. Escribe un programa que reciba
   //como parámetro un número de euros y calcule el cambio en dólares.
   //Escribe tu código aquí
-  return euro/1,20;
+  return euro*1.20;
   
 }
 
