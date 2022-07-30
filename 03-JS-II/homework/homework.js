@@ -1,5 +1,4 @@
 // No cambies los nombres de las funciones.
-
 function obtenerMayor(x, y) {
   // "x" e "y" son números enteros (int).
   // Devuelve el número más grande
@@ -46,7 +45,6 @@ function saludo(idioma) {
   }else if(idioma == 'ingles'){
     return 'Hello!';
   }else return 'Hola!';
-
 }
 
 function colors(color) {
@@ -166,7 +164,6 @@ function esVerdadero(valor){
   if (valor){
     return 'Soy verdadero';
   } else return 'Soy falso';
-
 }
 
 function tablaDelSeis(){
@@ -174,7 +171,6 @@ function tablaDelSeis(){
   //La función devuelve un array con los resultados de la tabla de multiplicar del 6 en orden creciente.
   //Escribe tu código aquí   
   const array = []; // [10,10];
-
     for (var i=0; i <=10; i++){
       resul = i*6;
       array [resul];
@@ -195,7 +191,7 @@ function tieneTresDigitos(numero){
 function doWhile(numero) {
   //Implementar una función tal que vaya aumentando el valor recibido en 5 hasta un límite de 8 veces
   //Retornar el valor final.
-  //Usar el bucle do ... while.asd
+  //Usar el bucle do ... while.
   var cont = 0;
   do{
     numero = numero+5;
@@ -203,10 +199,8 @@ function doWhile(numero) {
   return numero;
 }
 
-
 // No modificar nada debajo de esta línea
 // --------------------------------
-
 module.exports = {
   obtenerMayor,
   mayoriaDeEdad,
