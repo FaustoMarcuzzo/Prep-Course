@@ -71,7 +71,7 @@ function arrayContiene(array, elemento) {
   // Devuelve "true" si está, o "false" si no está
   // Tu código:
   var bandera = false;
-  for(var i = 0; i<array.length<i++){
+  for(var i = 0; i<array.length;i++){
     if(array[i]==elemento){
       bandera = true;
     }
