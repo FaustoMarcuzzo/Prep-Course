@@ -27,7 +27,7 @@ function incrementarPorUno(array) {
   // y devuelve el array
   // Tu c ódigo:
   for(var i = 0; i<array.length;i++){
-    array[i]=array[i]++;
+    array[i]=array[i]+1;
   }
   return array;
 }
@@ -37,7 +37,8 @@ function agregarItemAlFinalDelArray(array, elemento) {
   // Añade el "elemento" al final del array
   // y devuelve el array
   // Tu código:v
-  return array.push(elemento);
+  array.push(elemento);
+  return array;
 }
 
 
@@ -57,8 +58,8 @@ function dePalabrasAFrase(palabras) {
   // con espacios entre cada palabra
   // Ejemplo: ['Hello', 'world!'] -> 'Hello world!'
   // Tu código:
-  var frase = '';
-  for(var i = 0; i<palabras.length;i++){
+  var frase = palabras[0];
+  for(var i = 1; i<palabras.length;i++){
     frase = frase+' '+palabras[i];
   }
   return frase;
@@ -70,13 +71,12 @@ function arrayContiene(array, elemento) {
   // Comprueba si el elemento existe dentro de "array"
   // Devuelve "true" si está, o "false" si no está
   // Tu código:
-  var bandera = false;
   for(var i = 0; i<array.length;i++){
     if(array[i]==elemento){
-      bandera = true;
+      return true;
     }
-    return bandera;
   }
+  return false;
 }
 
 
@@ -122,21 +122,27 @@ function multiplicarArgumentos() {
   // Usa la palabra clave `arguments` para multiplicar todos los argumentos y devolver el producto
   // Si no se pasan argumentos devuelve 0. Si se pasa un argumento, simplemente devuélvelo
   // Escribe tu código aquí:
+    if(arguments.length > 1){
+      var resul = arguments[0];
+      for(var i = 1; i<arguments.length; i++){
+        resul = resul * arguments[i];
+      }
+      return resul;
+    }else if (arguments.length == 1) return arguments[0];
+    else if (arguments.length == 0) return 0;
 }
 
 
 function cuentoElementos(arreglo){
   //Realiza una función que retorne la cantidad de los elementos del arreglo cuyo valor es mayor a 18.
   //Escribe tu código aquí
-  var resul = [];
   var cont = 0;
   for(var i=0;i<arreglo.length;i++){
     if(arreglo[i]>18){
-      resul[cont] = arreglo[i];
       cont++;
     }
   }
-  return resul;
+  return count;
 }
 
 
@@ -192,7 +198,7 @@ function mesesDelAño(array) {
   var count = 0;
   for(var i = 0; i<array.length; i++){
     if(array[i]=='Enero'||array[i]=='Marzo'||array[i]=='Noviembre'){
-      resul[cont]=array[i];
+      resul[count]=array[i];
       count++;
     }
   }
@@ -210,7 +216,7 @@ function mayorACien(array) {
   var count = 0;
   for(var i = 0; i<array.length; i++){
     if(array[i]>100){
-      resul[cont]=array[i];
+      resul[count]=array[i];
       count++;
     }
   }
@@ -231,10 +237,10 @@ function breakStatement(numero) {
   do{
     numero = numero+2;
     resul[count] = numero;
-    count++;
     if(resul[count] == count){
       return 'Se interrumpió la ejecución';
     }
+    count++;
   }while(count<10)
   return resul;
 }
